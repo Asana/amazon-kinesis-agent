@@ -80,7 +80,7 @@ download_jar() {
 
   # download the file to a temp location, then if move it here if successful
   echo "Downloading $jar_name ($url)..."
-  wget -q -P ${dependencies_dir} $url -O ${tmp_dest} && \
+  wget -P ${dependencies_dir} $url -O ${tmp_dest} && \
     mv ${tmp_dest} ${jar_dest}
 
   # Purge our temp file regardless of the status here
