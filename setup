@@ -83,6 +83,8 @@ download_jar() {
   wget --retry-connrefused --waitretry=1 -P ${dependencies_dir} $url -O ${tmp_dest} && \
     mv ${tmp_dest} ${jar_dest}
 
+  echo  "Sleeping for 1 second to avoid 429s"
+  sleep 1
   # Purge our temp file regardless of the status here
   rm -f ${tmp_dest}
 }
